@@ -21,12 +21,25 @@ class Mentor:
     def __init__(self, name, surname):
         self.name = name
         self.surname = surname
-        self.courses_attached = []
+        self.courses_attached =[]
 
 class Lecturer(Mentor):
     def __init__(self, name, surname, grades):
         super().__init__(name, surname)
         self.grades ={}
+
+    def av_gr(self):
+        sum_gr = 0
+        len_gr = 0
+        for course in self.grades.values():
+            sum_gr += sum(course)
+            len_gr += len(course)
+            average_grade = round(sum_gr / len_gr)
+
+
+    def __str__(self):
+        return f"Имя: {self.name} \nФамилия: {self.surname} \nСредняя оценка за лекции: {self.av_gr()}"
+
 
 class Reviewer(Mentor):
     def rate_hw(self, student, course, grade):
@@ -38,12 +51,20 @@ class Reviewer(Mentor):
         else:
             return 'Ошибка'
 
+    def __str__(self):
+        return f"Имя: {self.name} \nФамилия: {self.surname}"
+
 
 
 best_student = Student('Ruoy', 'Eman', 'your_gender')
 best_student.courses_in_progress += ['Python']
 
-cool_lecturer = Lecturer('Sam', 'Rote', grades=10)
+cool_lecturer = Lecturer('Some', 'Buddy', grades=10)
 cool_lecturer.courses_attached += ['Python']
+some_reviewer = Reviewer('Some', 'Buddy')
+some_lecturer = Lecturer('Some', 'Buddy', grades=10)
 
-print(cool_lecturer)
+
+
+print(some_reviewer)
+print(some_lecturer)
