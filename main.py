@@ -62,7 +62,7 @@ best_student.courses_in_progress += ['Python']
 cool_lecturer = Lecturer('Some', 'Buddy', grades=10)
 cool_lecturer.courses_attached += ['Python']
 some_reviewer = Reviewer('Some', 'Buddy')
-some_lecturer = Lecturer('Some', 'Buddy', grades=10)
+some_lecturer = Lecturer('Some', 'Buddy', grades=())
 
 
 
