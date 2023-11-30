@@ -9,7 +9,7 @@ class Student:
 
     def rate_lec(self, lecturer, course, grade):
         marks = [0,1,2,3,4,5,6,7,8,9,10]
-        if isinstance(lecturer, Mentor) and grade in marks:
+        if isinstance(lecturer, Lecturer) and grade in marks:
             if course in lecturer.grades:
                 lecturer.grades[course] += [grade]
             else:
